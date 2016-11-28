@@ -15,4 +15,6 @@ I'm including a series of demos for the Amazon Alexa service which you can run o
 
 Check out my Christmas IoT made with a NeoPixel strip and a Pi Zero.
 
+![My Tree](https://github.com/alexellis/alexa-demos/blob/master/alexa-neopixels/overview.png)
 
+* [NeoPixels demo](https://github.com/alexellis/alexa-demos/tree/master/alexa-neopixels)
