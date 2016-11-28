@@ -14,7 +14,9 @@ Check out the demo on Youtube:
 
 * Follow this guide replacing "Hello World" for "Christmas Tree"
 
-* Configure your blinkt and run this code on the Pi: [mqtt.py](https://github.com/pimoroni/blinkt/blob/master/examples/mqtt.py)
+* Configure your Raspberry Pi and run this Python code on the Pi: [Pi](https://github.com/alexellis/alexa-demos/tree/master/alexa-neopixels/pi).
+
+I've used Docker to makes things easy - there are no extra dependencies to use and you don't have to touch `apt-get` once. Just `docker build` and `docker run`. If you prefer to do things manually - install all the depedencies from the Dockerfile one-by-one then launch the Python code.
 
 This Alexa skill works by sending an MQTT signal to iot.eclipse.org - the Raspberry Pi runs an MQTT subscription to a channel (topic) and decodes the incoming string as JSON to decide whether to change brightness or set a colour.
 
