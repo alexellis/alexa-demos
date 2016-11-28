@@ -1,4 +1,4 @@
-# AWS Lambda function for Alexa (Pimoroni Blinkt)
+# AWS Lambda function for Alexa (NeoPixels)
 
 A simple [AWS Lambda](http://aws.amazon.com/lambda) function that demonstrates how to write a skill for the Amazon Echo using the Alexa SDK
 
@@ -6,23 +6,35 @@ A simple [AWS Lambda](http://aws.amazon.com/lambda) function that demonstrates h
 
 Check out the demo on Youtube:
 
-[https://www.youtube.com/watch?v=uOahF3VAzR8](https://www.youtube.com/watch?v=uOahF3VAzR8)
+![Picture of my tree](https://pbs.twimg.com/media/CySuTgDXgAAAuM6.jpg:large)
+
+[https://www.youtube.com/watch?v=u4aIFOdGP2k&index=5&list=PLlIapFDp305CPJ3dKNb_mh0vqMz865oXT](https://www.youtube.com/watch?v=u4aIFOdGP2k&index=5&list=PLlIapFDp305CPJ3dKNb_mh0vqMz865oXT)
 
 ## Quick overview:
 
-* Follow this guide replacing "Hello World" for "Blink" or "Blinkt" - it's more likely that Alexa will understand "Blink"
+* Follow this guide replacing "Hello World" for "Christmas Tree"
 
 * Configure your blinkt and run this code on the Pi: [mqtt.py](https://github.com/pimoroni/blinkt/blob/master/examples/mqtt.py)
 
-This Alexa skill works by sending an MQTT signal to iot.eclipse.org - the Raspberry Pi runs an MQTT subscription to a channel (topic) pimoroni/blinkt and decodes the incoming string such as `rgb,1,255,0,0`.
+This Alexa skill works by sending an MQTT signal to iot.eclipse.org - the Raspberry Pi runs an MQTT subscription to a channel (topic) and decodes the incoming string as JSON to decide whether to change brightness or set a colour.
+
+## Build details:
+
+NeoPixel string plugs in on pin 18 of the Raspberry Pi via (DIN). Then connect 5v and GND.
+
+* Tree is from Wilkos £4
+* Plate is from Wilkos £2.50
+* 3x jumper wires
+* 1x Pi Zero
+* 1x NeoPixel string - 1m with 60 LEDs
+
+> With 60 LEDs at 100% brightness this draws around 0.85A, which should be OK without additional electronics and a quality 5v power supply for the Pi.
 
 **Phrases:**
 
-* Alexa tell blinkt [to] go red/greenb/lue
-* Alexa tell blinkt turn off
-
-## Concepts
-This simple sample has no external dependencies or session management, and shows the most basic example of how to create a Lambda function for handling Alexa Skill requests.
+* Alexa tell Christmas Tree [to] change to red/green/blue
+* Alexa tell Christmas Tree to turn off
+* Alexa tell Christmas Tree to set brightness to 60 percent
 
 ## Setup
 To run this example skill you need to do two things. The first is to deploy the example code in lambda, and the second is to configure the Alexa skill to use Lambda.
