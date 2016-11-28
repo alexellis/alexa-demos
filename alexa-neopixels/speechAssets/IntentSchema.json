@@ -1,0 +1,29 @@
+{
+  "intents": [
+    {
+      "intent": "ChangeColorIntent",
+      "slots": [
+        {
+          "name": "LedColor",
+          "type": "LedColor"
+        }
+      ]
+    },
+    {
+      "intent": "TurnOffIntent"
+    },
+    {
+      "intent": "ChangeIntensityIntent",
+      "slots": [
+        {
+          "name": "IntensityLevel",
+          "type": "AMAZON.NUMBER"
+        }
+      ]
+    },
+    {
+      "intent": "AMAZON.HelpIntent"
+    }
+  ]
+}
+
